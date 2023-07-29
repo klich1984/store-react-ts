@@ -1,6 +1,10 @@
+import Card from '../Components/Card/Card'
+
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Card />
+    </div>
   )
 }
 
