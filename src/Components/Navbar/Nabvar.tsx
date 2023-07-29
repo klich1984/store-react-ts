@@ -8,7 +8,7 @@ const Nabvar = () => {
   const activeStyle: string = 'underline underline-offset-4'
 
   return (
-    <nav className='flex justify-between items-center fixed -z-50 w-full px-8 py-5 text-sm font-light'>
+    <nav className='flex justify-between items-center sticky top-0 z-50 w-full px-8 py-5 text-sm font-light bg-white shadow-md'>
       <ul className='flex items-center gap-3'>
         <li className='font-bold text-lg text-cyan-800 '>
           <NavLink to='/' >
