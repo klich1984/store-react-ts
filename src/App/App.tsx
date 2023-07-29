@@ -6,6 +6,7 @@ import MyOrder from '../Pages/MyOrder'
 import MyOrders from '../Pages/MyOrders'
 import NotFound from '../Pages/NotFound'
 import SingIn from '../Pages/SingIn'
+import Nabvar from '../Components/Navbar/Nabvar'
 
 import './App.css'
 
@@ -26,6 +27,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <AppRoutes />
+      <Nabvar />
     </BrowserRouter>
   )
 }
