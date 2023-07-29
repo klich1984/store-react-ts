@@ -7,6 +7,7 @@ import MyOrders from '../Pages/MyOrders'
 import NotFound from '../Pages/NotFound'
 import SingIn from '../Pages/SingIn'
 import Nabvar from '../Components/Navbar/Nabvar'
+import Layout from '../Components/Layout/Layout'
 
 import './App.css'
 
@@ -26,8 +27,10 @@ const AppRoutes = () => {
 const App = () => {
   return (
     <BrowserRouter>
-      <AppRoutes />
       <Nabvar />
+      <Layout>
+        <AppRoutes />
+      </Layout>
     </BrowserRouter>
   )
 }
