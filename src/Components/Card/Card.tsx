@@ -1,4 +1,7 @@
-const Card = () => {
+import { Product } from '../../models/product.model'
+
+const Card = (props: { product: Product }) => {
+  const { category, price, title, images } = props.product
   return (
     <div className='bg-white cursor-pointer w-56 h-60 rounded-lg'>
       <figure className='relative mb-4 w-full h-4/5 overflow-hidden'>
@@ -7,16 +10,16 @@ const Card = () => {
         </div>
         <img
           className='w-full h-full object-cover rounded-lg'
-          src='https://picsum.photos/200/300'
-          alt='headpones'
+          src={images[0]}
+          alt={title}
         />
         <span className='absolute bottom-0 bg-white/60 rounded-lg text-xs m-2 px-2 py-1 text-black'>
-          Electronics
+          {category.name}
         </span>
       </figure>
       <p className='flex justify-between'>
-        <span className='text-sm font-light'>Headpones:</span>
-        <span className='text-lg font-medium'>$300</span>
+        <span className='text-sm font-light'>{title}:</span>
+        <span className='text-lg font-medium'>${price}</span>
       </p>
     </div>
   )
