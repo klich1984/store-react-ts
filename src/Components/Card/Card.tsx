@@ -1,7 +1,11 @@
 import { Product } from '../../models/product.model'
 
-const Card = (props: { product: Product }) => {
-  const { category, price, title, images } = props.product
+interface CardProps {
+  product: Product
+}
+
+const Card = ({ product }: CardProps) => {
+  const { category, price, title, images } = product
   return (
     <div className='bg-white cursor-pointer w-56 h-60 rounded-lg'>
       <figure className='relative mb-4 w-full h-4/5 overflow-hidden'>
