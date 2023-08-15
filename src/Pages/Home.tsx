@@ -1,4 +1,5 @@
 import Card from '../Components/Card/Card'
+import ProductDetail from '../Components/ProductDetail/ProductDetail'
 import useGetProducts from '../hooks/useGetProducts'
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       {products?.map((product) => (
         <Card key={product.id} product={product} />
       ))}
+      <ProductDetail />
     </main>
   )
 }
