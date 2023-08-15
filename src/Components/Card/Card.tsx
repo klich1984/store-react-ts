@@ -1,4 +1,6 @@
 import { useContext } from 'react'
+import { PlusCircleIcon } from '@heroicons/react/20/solid'
+
 import { ShoppingCartContext } from '../../context/Index'
 import { ShoppingCartType } from '../../context/types'
 import { Product } from '../../models/product.model'
@@ -18,7 +20,7 @@ const Card = ({ product }: CardProps) => {
           className='absolute top-2 right-2 flex justify-center items-center bg-white w-6 h-6 rounded-full'
           onClick={() => setCount(count + 1)}
         >
-          +
+          <PlusCircleIcon className='h-8 w-8 text-cyan-800' />
         </button>
         <img
           className='w-full h-full object-cover rounded-lg'

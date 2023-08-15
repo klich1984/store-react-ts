@@ -1,6 +1,9 @@
 import { useContext } from 'react'
+import { ShoppingBagIcon } from '@heroicons/react/20/solid'
+
 import { ShoppingCartContext } from '../../context/Index'
 import { ShoppingCartType } from '../../context/types'
+
 import { NavLink } from 'react-router-dom'
 
 const Nabvar = () => {
@@ -86,7 +89,12 @@ const Nabvar = () => {
             Sign In
           </NavLink>
         </li>
-        <li>🛒 {count}</li>
+        <li className='flex items-center'>
+          <span>
+            <ShoppingBagIcon className='h-6 w-6 text-cyan-800 me-1' />
+          </span>{' '}
+          {count}
+        </li>
       </ul>
     </nav>
   )
