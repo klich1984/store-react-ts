@@ -1,22 +1,49 @@
-const Card = () => {
+import { useContext } from 'react'
+import { PlusCircleIcon } from '@heroicons/react/20/solid'
+
+import { ShoppingCartContext } from '../../context/Index'
+import { ShoppingCartType } from '../../context/types'
+import { Product } from '../../models/product.model'
+
+interface CardProps {
+  product: Product
+}
+
+const Card = ({ product }: CardProps) => {
+  const { count, setCount, openDetails } = useContext(
+    ShoppingCartContext
+  ) as ShoppingCartType
+
+  const { category, price, title, images } = product
+
+  const handleProductDetail = () => {
+    openDetails(product)
+  }
+
   return (
-    <div className='bg-white cursor-pointer w-56 h-60 rounded-lg'>
+    <div
+      className='bg-white cursor-pointer w-56 h-60 rounded-lg'
+      onClick={handleProductDetail}
+    >
       <figure className='relative mb-4 w-full h-4/5 overflow-hidden'>
-        <div className='absolute top-2 right-2 flex justify-center items-center bg-white w-6 h-6 rounded-full'>
-          +
-        </div>
+        <button
+          className='absolute top-2 right-2 flex justify-center items-center bg-white w-6 h-6 rounded-full'
+          onClick={() => setCount(count + 1)}
+        >
+          <PlusCircleIcon className='h-8 w-8 text-cyan-800' />
+        </button>
         <img
           className='w-full h-full object-cover rounded-lg'
-          src='https://picsum.photos/200/300'
-          alt='headpones'
+          src={images[0]}
+          alt={title}
         />
         <span className='absolute bottom-0 bg-white/60 rounded-lg text-xs m-2 px-2 py-1 text-black'>
-          Electronics
+          {category.name}
         </span>
       </figure>
       <p className='flex justify-between'>
-        <span className='text-sm font-light'>Headpones:</span>
-        <span className='text-lg font-medium'>$300</span>
+        <span className='text-sm font-light'>{title}:</span>
+        <span className='text-lg font-medium'>${price}</span>
       </p>
     </div>
   )
