@@ -12,7 +12,6 @@ const useGetProducts = () => {
         const dataJson = await fetch(url)
         const data = await dataJson.json()
         setProducts(data)
-        console.log(data)
       } catch (error) {
         console.error('Problema en la peticion de productos', error)
       }
