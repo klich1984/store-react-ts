@@ -8,6 +8,7 @@ import NotFound from '../Pages/NotFound'
 import SingIn from '../Pages/SingIn'
 import Nabvar from '../Components/Navbar/Nabvar'
 import Layout from '../Components/Layout/Layout'
+import { ShoppingCartProvider } from '../context/Index'
 
 import './App.css'
 
@@ -26,12 +27,14 @@ const AppRoutes = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Nabvar />
-      <Layout>
-        <AppRoutes />
-      </Layout>
-    </BrowserRouter>
+    <ShoppingCartProvider>
+      <BrowserRouter>
+        <Nabvar />
+        <Layout>
+          <AppRoutes />
+        </Layout>
+      </BrowserRouter>
+    </ShoppingCartProvider>
   )
 }
 
